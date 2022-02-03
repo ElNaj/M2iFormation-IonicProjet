@@ -11,7 +11,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "api": "json-server --watch db/db.json"
-
   },
   "private": true,
   "dependencies": {
