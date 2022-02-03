@@ -1,24 +1,40 @@
 {
-    "pizzas": [
-        {
-            "nom": "Margarita",
-            "prix": 9,
-            "id": 1
-        },
-        {
+  "pizzas": [
+    {
+      "nom": "Margarita",
+      "prix": 9,
+      "id": 1
+    },
+    {
+      "nom": "Napolitaine",
+      "prix": 10,
+      "id": 2
+    },
+    {
+      "nom": "Norvégienne",
+      "prix": 12,
+      "id": 3
+    },
+    {
+      "nom": "4 Fromages",
+      "prix": 11,
+      "id": 4
+    }
+  ],
+  "paniers": [
+    {
+        "id": 1,
+        "pizzas": [{
             "nom": "Napolitaine",
             "prix": 10,
-            "id": 1
+            "id": 2
         },
         {
             "nom": "Norvégienne",
             "prix": 12,
-            "id": 1
-        },
-        {
-            "nom": "4 Fromages",
-            "prix": 11,
-            "id": 1
+            "id": 3
         }
     ]
+  }  
+]
 }
