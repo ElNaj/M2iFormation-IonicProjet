@@ -2,17 +2,17 @@
   <ion-list>
     <ion-list-header>
       <ion-label>
-        Liste des Paniers en cours
+        <h1>Liste des Paniers en cours</h1>
       </ion-label>
     </ion-list-header>
     <ng-container *ngFor="let panier of paniers; let index = index">
         <ion-card>
           <ion-card-header>
-          <ion-card-title># Commande {{panier.id}}</ion-card-title>
+          <ion-card-title><h2># Commande {{panier.id}}</h2></ion-card-title>
           </ion-card-header>
           <ng-container *ngFor="let pizza of panier.pizzas">
             <ion-card-content>
-              {{pizza.nom}} - {{pizza.prix}} €
+              <h3>{{pizza.nom}} - {{pizza.prix}} €</h3>
             </ion-card-content>
           </ng-container>
         </ion-card>
