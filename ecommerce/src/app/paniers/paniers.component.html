@@ -10,13 +10,13 @@
           <ion-card-header>
           <ion-card-title># Commande {{panier.id}}</ion-card-title>
           </ion-card-header>
-          <ng-container *ngFor="let pizza of panier.pizzas">
+          <ng-container *ngFor="let pizza of panier.pizzas; let indexPi = index">
             <ion-card-content>
               {{pizza.nom}} - {{pizza.prix}} €
             </ion-card-content>
           </ng-container>
         </ion-card>
-          <ion-button expand="full" color="success">Valider</ion-button>
+          <ion-button expand="full" color="success" (click)="valider(index)">Valider</ion-button>
     </ng-container>
     <ion-button expand="full" color="primary" (click)="retour()">Retour aux pizzas</ion-button>
   </ion-list>
