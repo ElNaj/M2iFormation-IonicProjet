@@ -25,4 +25,7 @@
   </ion-list>
 </ion-content>
 
-<ion-button expand="full" color="primary" (click)="goToPanier()">Voir mon Panier</ion-button>
+<ion-button expand="full" color="primary" (click)="goToPanier()">
+  Voir mon Panier
+  <ion-badge slot="end" color="warning" style="position: absolute; right: -5px;">{{panier_qty}}</ion-badge>
+</ion-button>
