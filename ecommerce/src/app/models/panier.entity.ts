@@ -4,4 +4,5 @@ export class Panier {
 
     id: number;
     pizzas: Pizza[];
+
 }
