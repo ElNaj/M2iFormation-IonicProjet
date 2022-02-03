@@ -27,4 +27,8 @@ export class PanierService {
   update(id: number, panier: Panier): Observable<Panier> {
     return this.http.put<Panier>(`${environment.apiUrl}/paniers/${id}`, panier);
   }
+
+  delete(id: number): Observable<Panier> {
+    return this.http.delete<Panier>(`${environment.apiUrl}/paniers/${id}`);
+  }
 }

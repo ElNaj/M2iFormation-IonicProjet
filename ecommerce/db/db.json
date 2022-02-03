@@ -39,6 +39,31 @@
           "nom": "4 Fromages",
           "prix": 11,
           "id": 4
+        },
+        {
+          "nom": "4 Fromages",
+          "prix": 11,
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pizzas": [
+        {
+          "nom": "Napolitaine",
+          "prix": 10,
+          "id": 2
+        },
+        {
+          "nom": "Norvégienne",
+          "prix": 12,
+          "id": 3
+        },
+        {
+          "nom": "4 Fromages",
+          "prix": 11,
+          "id": 4
         }
       ]
     }

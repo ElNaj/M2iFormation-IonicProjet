@@ -37,11 +37,11 @@ export class PizzasComponent implements OnInit {
   initPanier(){
     this.panierService.findById(this.id).subscribe(data => {
       this.panier = data;
+      this.id = this.panier.id;
     });
   }
 
   addPizza(index: number){    
-
     this.panier.pizzas.push(this.pizzas[index]);
     this.panier_qty += 1;
     console.log(this.panier.pizzas); 
