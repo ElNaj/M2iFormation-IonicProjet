@@ -16,6 +16,7 @@ export class PizzasComponent implements OnInit {
 
   panier: Panier;
   id: number = 1;
+  panier_qty: number = 0;
 
   constructor(private service: PizzaService,
               private panierService: PanierService,
@@ -41,6 +42,7 @@ export class PizzasComponent implements OnInit {
 
   addPizza(index: number){    
     this.panier.pizzas.push(this.pizzas[index]);
+    this.panier_qty += 1;
     console.log(this.panier.pizzas); 
     // this.panierService.update(this.id, this.pizzas[index]).subscribe(data => {
     //   this.panier = data;
