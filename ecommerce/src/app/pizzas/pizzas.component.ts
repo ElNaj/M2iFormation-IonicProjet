@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Panier } from '../models/panier.entity';
 import { Pizza } from '../models/pizza.entity';
 import { PanierService } from '../services/panier.service';
@@ -18,7 +18,8 @@ export class PizzasComponent implements OnInit {
   id: number = 1;
 
   constructor(private service: PizzaService,
-              private panierService: PanierService) { 
+              private panierService: PanierService,
+              private router : Router) {
   }
 
   ngOnInit() {
@@ -45,6 +46,10 @@ export class PizzasComponent implements OnInit {
     //   this.panier = data;
     // });
 
+  }
+
+  goToPanier() {
+    this.router.navigateByUrl("/paniers");
   }
   
 }
