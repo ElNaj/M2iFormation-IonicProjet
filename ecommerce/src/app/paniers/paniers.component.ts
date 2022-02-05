@@ -32,27 +32,26 @@ export class PaniersComponent implements OnInit {
     // A modfier - a la validation ça pourrait envoyer vers
     // une page de suivi ? ou autre ? 
     alert("Commande Validée - Retour aux Pizzas !!");
-    
+    console.log(this.panier.id);
     this.service.delete(index + 1).subscribe(data => {
       this.panier = data;
-      console.log(this.panier.id);
     });
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("/pizzas");
   }
 
   suppPiz(indexPi: number, index: number) {
     this.service.findById(index + 1).subscribe(data => {
       this.panier = data;
       console.log(this.panier.id);
-      this.panier.pizzas.splice(indexPi, 1);
-      console.log(this.panier);
-      this.service.update(this.panier.id, this.panier).subscribe(data => {
-      this.panier = data;
-      console.log(this.panier);
-      //Problème d'actualisation des données 
-      // this.router.navigateByUrl("/paniers");
-      this.initPanier();
-    })    
+      this.panier.pizzas.splice(indexPi, 1); 
+      this.service.update(this.panier.id, this.panier).subscribe(() => {
+        this.initPanier();
+      })
+      console.log(this.panier); 
+      if(this.panier.pizzas.length === 0) {
+        console.log(this.panier.id);
+        this.suppPan(index);
+      }  
     });
   }
 
@@ -60,10 +59,7 @@ export class PaniersComponent implements OnInit {
     this.service.delete(index + 1).subscribe(data => {
       this.panier = data;
       console.log(this.panier);
-      //Problème d'actualisation des données 
-      // this.router.navigateByUrl("/paniers");
       this.initPanier();
-
     });
   }
 }
