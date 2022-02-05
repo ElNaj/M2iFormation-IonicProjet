@@ -52,7 +52,7 @@ export class PizzasComponent implements OnInit {
   }
 
   goToPanier() {
-    this.router.navigateByUrl("/paniers");
+    this.router.navigateByUrl(`/paniers`);
   }
   
 }

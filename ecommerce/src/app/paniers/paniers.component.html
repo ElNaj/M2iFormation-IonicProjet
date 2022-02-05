@@ -12,12 +12,18 @@
           </ion-card-header>
           <ng-container *ngFor="let pizza of panier.pizzas; let indexPi = index">
             <ion-card-content>
-              <h3>{{pizza.nom}} - {{pizza.prix}} €</h3>
+              <ion-item>
+                <h3>{{pizza.nom}} - {{pizza.prix}} €</h3>
+                <ion-icon slot="end" name="trash" (click)="suppPiz(indexPi,index)"></ion-icon>
+              </ion-item>
             </ion-card-content>
           </ng-container>
         </ion-card>
           <ion-button expand="full" color="success" (click)="valider(index)">Valider</ion-button>
+          <ion-button expand="full" color="danger" (click)="suppPan(index)">Suppimer commande {{ panier.id }}</ion-button>
     </ng-container>
   </ion-list>
+  <ion-button expand="full" color="primary" (click)="retour()">Retour aux pizzas</ion-button>
 </ion-content>
-<ion-button expand="full" color="primary" (click)="retour()">Retour aux pizzas</ion-button>
+
+
