@@ -29,11 +29,39 @@ export class PaniersComponent implements OnInit {
   }
 
   valider(index: number) {
+    // A modfier - a la validation ça pourrait envoyer vers
+    // une page de suivi ? ou autre ? 
     alert("Commande Validée - Retour aux Pizzas !!");
+    
     this.service.delete(index + 1).subscribe(data => {
       this.panier = data;
       console.log(this.panier.id);
     });
     this.router.navigateByUrl("");
+  }
+
+  suppPiz(indexPi: number, index: number) {
+    this.service.findById(index + 1).subscribe(data => {
+      this.panier = data;
+      console.log(this.panier.id);
+      this.panier.pizzas.splice(indexPi, 1);
+      console.log(this.panier);
+      this.service.update(this.panier.id, this.panier).subscribe(data => {
+      this.panier = data;
+      console.log(this.panier);
+      //Problème d'actualisation des données 
+      this.router.navigateByUrl("/paniers");
+    })    
+    });
+  }
+
+  suppPan(index: number) {
+    this.service.delete(index + 1).subscribe(data => {
+      this.panier = data;
+      console.log(this.panier);
+      //Problème d'actualisation des données 
+      this.router.navigateByUrl("/paniers");
+
+    });
   }
 }

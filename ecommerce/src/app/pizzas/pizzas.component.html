@@ -1,8 +1,8 @@
 <ion-content>
   <ion-list>
     <ion-list-header>
-      <ion-label>
-        Liste de Pizzas
+      <ion-label color="primary">
+        <h1>Liste de Pizzas</h1>
       </ion-label>
     </ion-list-header>
     <ng-container *ngFor="let pizza of pizzas; let index = index">
@@ -12,14 +12,21 @@
           <ion-label>
             {{pizza.nom}} - {{pizza.prix}} €
           </ion-label>
+          <ion-icon slot="end" name="cart-outline" (click)="addPizza(index)"></ion-icon>
         </ion-item>
         <ion-item-options>
           <ion-item-option color="success" (click)="addPizza(index)">
-            <ion-icon slot="start" name="cart-outline"></ion-icon>
+            <ion-icon name="add-circle"></ion-icon>
             Ajouter
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
     </ng-container>
   </ion-list>
+  <ion-img src="https://i.etsystatic.com/26041894/r/il/f663a8/2702023109/il_1588xN.2702023109_sty8.jpg" alt="image_mascotte" ></ion-img>
 </ion-content>
+<!-- <img src="https://i.etsystatic.com/26041894/r/il/f663a8/2702023109/il_1588xN.2702023109_sty8.jpg" alt="image_mascotte"  [src]="item.src"> -->
+<ion-button expand="full" color="primary" (click)="goToPanier()">
+  Voir mon Panier
+  <ion-badge slot="end" color="warning" style="position: absolute; right: -5px;">{{panier_qty}}</ion-badge>
+</ion-button>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Panier } from '../models/panier.entity';
 import { Pizza } from '../models/pizza.entity';
 import { PanierService } from '../services/panier.service';
@@ -16,9 +16,11 @@ export class PizzasComponent implements OnInit {
 
   panier: Panier;
   id: number = 1;
+  panier_qty: number = 0;
 
   constructor(private service: PizzaService,
-              private panierService: PanierService) { 
+              private panierService: PanierService,
+              private router : Router) {
   }
 
   ngOnInit() {
@@ -41,11 +43,16 @@ export class PizzasComponent implements OnInit {
 
   addPizza(index: number){    
     this.panier.pizzas.push(this.pizzas[index]);
+    this.panier_qty += 1;
     console.log(this.panier.pizzas); 
     this.panierService.update(this.id, this.panier).subscribe(data => {
       this.panier = data;
     });
 
+  }
+
+  goToPanier() {
+    this.router.navigateByUrl(`/paniers`);
   }
   
 }
