@@ -47,10 +47,11 @@ export class PizzasComponent implements OnInit {
     this.panierService.update(this.id, this.panier).subscribe(data => {
       this.panier = data;
     });
+    this.initPanier();
   }
 
   goToPanier() {
-    this.initPanier();
+    
     this.router.navigateByUrl(`/paniers`);
   }
   
