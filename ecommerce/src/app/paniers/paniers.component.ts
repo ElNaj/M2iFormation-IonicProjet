@@ -50,7 +50,8 @@ export class PaniersComponent implements OnInit {
       this.panier = data;
       console.log(this.panier);
       //Problème d'actualisation des données 
-      this.router.navigateByUrl("/paniers");
+      // this.router.navigateByUrl("/paniers");
+      this.initPanier();
     })    
     });
   }
@@ -60,7 +61,8 @@ export class PaniersComponent implements OnInit {
       this.panier = data;
       console.log(this.panier);
       //Problème d'actualisation des données 
-      this.router.navigateByUrl("/paniers");
+      // this.router.navigateByUrl("/paniers");
+      this.initPanier();
 
     });
   }
