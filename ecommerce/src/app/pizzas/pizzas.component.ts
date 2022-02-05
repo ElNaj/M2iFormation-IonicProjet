@@ -42,16 +42,16 @@ export class PizzasComponent implements OnInit {
   }
 
   addPizza(index: number){    
-    this.panier.pizzas.push(this.pizzas[index]);
     this.panier_qty += 1;
-    console.log(this.panier.pizzas); 
+    this.panier.pizzas.push(this.pizzas[index]);
     this.panierService.update(this.id, this.panier).subscribe(data => {
       this.panier = data;
     });
-
+    this.initPanier();
   }
 
   goToPanier() {
+    
     this.router.navigateByUrl(`/paniers`);
   }
   
